@@ -1,401 +1,1620 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#14532d">
+
+    <meta name="description"
+        content="Kigumo Makomboki Recovery Initiative (KIMRI) is a community-based organisation committed to restoring hope, supporting families and helping individuals affected by drug and substance abuse rebuild their lives.">
+
+    <meta name="keywords"
+        content="KIMRI, Kigumo, Makomboki, drug abuse awareness, rehabilitation, counselling, community support">
+
+    <meta name="author" content="Kigumo Makomboki Recovery Initiative">
+
+    <meta property="og:title"
+        content="KIMRI | Kigumo Makomboki Recovery Initiative">
+
+    <meta property="og:description"
+        content="Restoring Hope, Healing Families. Together we can build a healthier community.">
+
+    <meta property="og:type" content="website">
+
     <title>KIMRI | Kigumo Makomboki Recovery Initiative</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="image/kimri-mark.jpeg" type="image/jpeg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Leaflet interactive map -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        defer></script>
+
+    <!-- Main JavaScript -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Header-->
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
     <header class="site-header" id="home">
+
         <div class="container header-container">
-            <a href="#home" class="brand-logo"aria-label="KIMRI Home">
+
+            <a href="#home"
+               class="brand-logo"
+               aria-label="KIMRI homepage">
+
                 <img
-                src="image/Kimri-logo.jpeg"
-                alt="KIMRI organisation logo"
-                class="brand-logo-image"
-                >
+                    src="image/kimri-mark.jpeg"
+                    alt="KIMRI logo"
+                    class="brand-logo-image">
+
                 <span class="brand-text">
-                <span class="brand-name">KIMRI</span>
-                <span class="brand-full-name">
-                    KIGUMO MAKOMBOKI<br>
-                  <br> RECOVERY INIATIVE
+                    <span class="brand-full-name">
+                        KIGUMO MAKOMBOKI
+                        <br>
+                        RECOVERY INITIATIVE
                     </span>
 
                 </span>
+
             </a>
-            <p class="brand-tagline">
-                Restoring Hope, Healing families
-            </p>
-                      
-        </div>
-    </header>
-    <!--Navigation Bar-->
-    <nav class="navbar" aria-label="main navigation">
-     <div class="nav-container">
-        <a href="#home" class="nav-logo" aria-label="KIMRI Home">KIMRI</a>
-        <!---mobile navigation-->
-        <button
-        type="button"
-        class="nav-toggle"
-        id="navToggle"
-        aria-label="open navigation menu"
-        aria-controls="navmenu"
-        aria-expanded="false"
-        >
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
-           <ul class="nav-menu" id="navmenu">
-            <li class="nav-item">
-                <a href="#home" class="nav-link">
-                    <i class="fa-solid fa-house" aria-hidden="true"></i>
-                    <span>Home</span>
 
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#about" class="nav-link">
-                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-                <span>About</span>
-                
-                </a>
-                </li>
-            <li class="nav-item">
-                <a href="#gallery" class="nav-link">
-                    <i class="fa-solid fa-images" aria-hidden="true"></i>
-                       <span>Gallery</span>
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#feedback" class="nav-link">
-                            <i class="fa-solid fa-comments" aria-hidden="true"></i>
-                            <span>Feedback</span>
-                          </a>
-
-                    </li>
-            <li class="nav-item">
-                <a href="#contact" class="nav-link">
-                    <i class="fa-solid fa-address-book" aria-hidden="true"></i>
-                    <span>Contact</span>
-                    </a>
-            
-            </li>
-            <li class="nav-item">
-                <a href="#contact" class="nav-donate-item">
-                    <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                    <span>Donate Now</span>
-                </a>
-            </li>
-
-        </ul>
-        
-     </div>
-
-    </nav>
-    <main>
-         <section class="banner" arial-labelledby="bannerTitle">
-        <h2 id="bannerTitle">say No to DrugAbuse</h2>
-        <p>TOGETHER WE CAN-Empower kigumo through rehabilitationeducation&community support</p>
-        
-        <button type="button" id="donateNowBtn" class="donate-button">
-            <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
-            Donate Now
-        </button>
-        
-    </section>
-
-    </main>
-    <!-- Banner-->
-   
-    <!--VISION BEARER  & CHAIRMAN SECTION-->
-    <section class="vision-bearer" id="vision-bearer" aria-labelledby="visionTitle">
-        <div class="container vision-bearer-container">
-            <div class="vision-bearer-image">
-                <img 
-                src="image/vision-bearer.jpeg" 
-                alt="KIMRI Vision Bearer and Chairman"
-                loading="lazy"
-                >
-
-            </div>
-            <div class="vision-bearer-details">
-                <span class="section-label">OUR LEADERSHIP</span>
-                <h2 id="visionTitle">Meet our vision Bearer  & Chairman</h2>
-                <h3>James Muhia Mwaura</h3>
-                <p>
-                 Providing leadership and supporting the Kigumo
-                Makomboki Recovery Initiative in its mission to
-                restore hope, support families, and promote recovery
-                from drug and substance abuse.
-                </p>
-                <p class="vision-motto">
-                    <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
-                    Together we can - Tunaweza pamoja
-
-                </p>
-                <a href="#about" class="vision-button">
-                    <i class="fa-solid fa-circle-info" arial-hidden="true"></i>
-                    Learn about KIMRI
-                </a>
-
-            </div>
-        
-
-        </div>
-
-    </section>
-     <!--ABOUT SECTION-->
-    <section class="about container" id="about" aria-labelledby="aboutTitle">
-        <h2 id="aboutTitle">ABOUT KIMRI</h2>
-        <P>
-           Kigumo Makomboki Recovery Initiative (KIMRI) is a
-        community-based organisation committed to restoring hope,
-        supporting families, and helping individuals affected by
-        drug and substance abuse rebuild their lives.
-        </p>
-        <p>
-            Through community awareness, rehabilitation support,
-        counselling, education, and family engagement, KIMRI aims
-        to promote healthier communities and reduce the harm caused
-        by drug and substance abuse.
-        </p>
-
-        <p>
-           <strong>Vision Bearer:</strong>James Muhia Mwaura
-           <span class="separator"></span>
-          <strong>Vision:</strong>
-          Tunaweza pamoja
-            
-        </p>
-        <p>
-           <strong>Venue:</strong>KAG Makomboki Church|<strong>
-            <span class="separator"></span>
-            <strong>Date:</strong>
-            06 septemeber 2026 
-        </p>
-        <!--mission Section-->
-           <section class="mission" id="mission" aria-labelledby="missionTitle">
-            
-                <div class="mission-intro">
-                    <h3 id="missionTitle">Our Mission</h3>
-
-            <p>
-            To empower the people of Kigumo through rehabilitation
-            support, education, counselling, and community
-            participation, helping individuals overcome the
-            challenges of drug and substance abuse and supporting
-            families as they work towards recovery.
-        </p>
-
-              
-
-            </div>
-            
-        <article class="mission-card">
-            <h4>1. Rehabilitation center</h4>
-            <p>
-                Promote access to appropriate rehabilitation
-                services and recovery support for individuals
-                affected by drug and substance abuse.
-
-            </p>
-
-        </article>
-        <article class="mission-card">
-            <h4>2. Education and awareness</h4>
-            <p>
-                 Educate young people, families, and the wider
-                community about the dangers of drug abuse,
-                prevention, and the importance of seeking help.
-            </p>
-
-        </article>
-        <article class="mission-card">
-            <h4>3. Counselling and support</h4>
-            <p>
-                Provide counselling services, support groups, and
-                resources to help individuals and families cope
-                with the challenges of drug and substance abuse.
-            </p>
-
-        </article>
-        <article class="mission-card">
-            <h4>4. Community Reintegration</h4>
-            <p>
-              Encourage acceptance, dignity, and community
-                involvement to help people in recovery rebuild
-                relationships and participate positively in society.
-            </p>
-
-        </article>
-
-           </section>
-    </section>
-
-    <section class="gallery-section" id="gallery" aria-labelledby="galleryTitle">
-        <div class="container">
-            <h2 id="galleryTitle">Our Gallery</h2>
-            <div class="gallery">
-                <img src="Board meeting.jpeg" alt="KIMRI Board meeting"loading="lazy" tabindex="0" aria-label="view boardmeeting photograph">
-                <img src="committee meeting.jpeg" alt="Committee Meeting"loading="lazy" tabindex="0"aria-label="view committeemeeting photograph">
-                <img src="group photo.jpeg" alt="Group photo"loading="lazy" tabindex="0"aria-label="view group photograph">
-                <img src="vice chairman.jpeg" alt="Vice chairman"loading="lazy" tabindex="0"aria-label="view vice Chairman photograph">
-                <img src="field.jpeg" alt="field visit"loading="lazy" tabindex="0"aria-label="view field visit photograph">
-                <img src="recovery.jpeg" alt="Recovery Group"loading="lazy" tabindex="0"aria-label="view recovery group photograph">
-                <img src="counselling.jpeg" alt="Counselling"loading="lazy" tabindex="0"aria-label="view counselling photograph" >
-                <img src="leadership team.jpeg" alt="Leadership Team"loading="lazy" tabindex="0"aria-label="view leadership team photograph" >
-              </div>
-        </div>
-
-    </section>
-  
-        
-<!-- GIVE US YOUR FEEDBACK SECTION -->
-<section class="feedback-section" id="feedback" aria-labelledby="feedbackTitle">
-    <div class="container feedback-container">
-
-        <div class="feedback-heading">
-            <span class="section-label">YOUR VOICE MATTERS</span>
-            <h2 id="feedbackTitle">Give Us Your Feedback</h2>
-
-            <p>
-                Your opinion matters to KIMRI. Share your experience,
-                suggestions, and ideas to help us improve our services
-                and support our community.
-            </p>
-        </div>
-
-        <form class="feedback-form" 
-        id="feedbackForm"
-        action="https://formspree.io/f/mnppdrpn"
-        method="POST"
-        >
-        <input
-        type="hidden"
-        name="_subject"
-        value="New KIMRI website feedback"
-        >
-
-        
-
-            <div class="form-group">
-                <label for="feedbackName">Full Name</label>
-                <input
-                    type="text"
-                    id="feedbackName"
-                    name="name"
-                    placeholder="Enter your full name"
-                    required
-                >
+            <div class="header-message">
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                Restoring Hope, Healing Families
             </div>
 
-            <div class="form-group">
-                <label for="feedbackEmail">Email Address</label>
-                <input
-                    type="email"
-                    id="feedbackEmail"
-                    name="email"
-                    placeholder="Enter your email address"
-                    autocomplete="email"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="feedbackType">Feedback Category</label>
-                <select id="feedbackType" name="category" required>
-                    <option value="">Choose a category</option>
-                    <option value="Suggestion">Suggestion</option>
-                    <option value="Compliment">Compliment</option>
-                    <option value="Complaint">Complaint</option>
-                    <option value="Community Support">Community Support</option>
-                    <option value="Rehabilitation Services">Rehabilitation Services</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="feedbackRating">Your Rating</label>
-                <select id="feedbackRating" name="rating" required>
-                    <option value="">Rate your experience</option>
-                    <option value="5">5 - Excellent</option>
-                    <option value="4">4 - Very Good</option>
-                    <option value="3">3 - Good</option>
-                    <option value="2">2 - Fair</option>
-                    <option value="1">1 - poor</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="feedbackMessage">Your Message</label>
-                <textarea
-                    id="feedbackMessage"
-                    name="message"
-                    rows="6"
-                    placeholder="Write your feedback here..."
-                    minlength="10"
-                    required
-                ></textarea>
-            </div>
-
-            <button type="submit" class="feedback-submit">
-                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                Submit Feedback
+            <button
+                type="button"
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="Switch to dark theme"
+                title="Switch to dark theme"
+                aria-pressed="false">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                <span>Dark mode</span>
             </button>
 
-            <p id="feedbackStatus" role="status" aria-live="polite"></p>
+        </div>
 
-        </form>
-    </div>
-</section>   <!--IMAGE LIGHTBOX-->
-   <div id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" aria-hidden="true">
-    <button type="button" class="close" aria-label="Close image">&times;</button>
-
-    <button type="button" class="prev" aria-label="Previous image">
-        &#10094;
-    </button>
-
-    <div class="lightbox-content">
-        <img id="lightboxImg" src="" alt="Enlarged gallery image">
-        <div class="caption" aria-live="polite"></div>
-    </div>
-
-    <button type="button" class="next" aria-label="Next image">
-        &#10095;
-    </button>
-</div>
-    <footer id="contact">
+    </header>
 
 
-        <div class="container">
-            <h3>Contact Us</h3>
-            <p>
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-               <a href="tel:0748250970">0748250970</a>  
-               <a href="tel:0727744985">0727744985</a> 
-               <a href="tel:0725909816">0725909816</a>
-            </p>
-            <p>
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                Makomboki, Kigumo, Muranga County,Kenya</p>
-            <p>
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                <a href="mailto:info@Kimri.or.ke">
-                    info@kimri.or.ke
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav class="navbar" aria-label="Main navigation">
+
+        <div class="nav-container">
+
+            <a href="#home"
+               class="nav-logo"
+               aria-label="KIMRI Home">
+
+                KIMRI
+                <span>.</span>
+
+            </a>
+
+            <!-- Mobile navigation toggle -->
+
+            <button
+                type="button"
+                class="nav-toggle"
+                id="navToggle"
+                aria-label="Open navigation menu"
+                aria-controls="navmenu"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"
+                   aria-hidden="true"></i>
+
+            </button>
+
+
+            <!-- Navigation links -->
+
+            <ul class="nav-menu" id="navmenu">
+
+                <li class="nav-item">
+
+                    <a href="#home" class="nav-link active">
+
+                        <i class="fa-solid fa-house"
+                           aria-hidden="true"></i>
+
+                        <span>Home</span>
+
                     </a>
-                </p>
-            <p class="copy">&#169;
-                <span id="currentYear">2026</span>
-                 KIMRI. All Rights Reserved.
-                </p>               
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a href="#about" class="nav-link">
+
+                        <i class="fa-solid fa-circle-info"
+                           aria-hidden="true"></i>
+
+                        <span>About</span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a href="#mission" class="nav-link">
+
+                        <i class="fa-solid fa-bullseye"
+                           aria-hidden="true"></i>
+
+                        <span>Our Mission</span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a href="#gallery" class="nav-link">
+
+                        <i class="fa-solid fa-images"
+                           aria-hidden="true"></i>
+
+                        <span>Gallery</span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a href="#feedback" class="nav-link">
+
+                        <i class="fa-solid fa-comments"
+                           aria-hidden="true"></i>
+
+                        <span>Feedback</span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a href="#contact" class="nav-link">
+
+                        <i class="fa-solid fa-address-book"
+                           aria-hidden="true"></i>
+
+                        <span>Contact</span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a href="#donation-dialog"
+                       class="nav-donate-item"
+                       data-action="donate">
+
+                        <i class="fa-solid fa-heart"
+                           aria-hidden="true"></i>
+
+                        <span>Donate Now</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
 
         </div>
+
+    </nav>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             HERO SECTION
+        ====================================== -->
+
+        <section class="banner" aria-labelledby="bannerTitle">
+
+            <div class="container banner-content">
+
+                <div class="banner-text">
+
+                    <span class="section-label">
+
+                        <i class="fa-solid fa-hands-holding-circle"
+                           aria-hidden="true"></i>
+
+                        A HEALTHIER COMMUNITY STARTS WITH US
+
+                    </span>
+
+
+                    <h1 id="bannerTitle">
+
+                        Say No to
+                        <span>Drug Abuse</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        TOGETHER WE CAN — Empower Kigumo through
+                        rehabilitation, education and community
+                        support.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a href="#donation-dialog"
+                           class="donate-button"
+                           data-action="donate">
+
+                            <i class="fa-solid fa-hand-holding-heart"
+                               aria-hidden="true"></i>
+
+                            Donate Now
+
+                        </a>
+
+
+                        <a href="#about"
+                           class="hero-secondary-button">
+
+                            Discover Our Mission
+
+                            <i class="fa-solid fa-arrow-right"
+                               aria-hidden="true"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LEADERSHIP SECTION
+        ====================================== -->
+
+        <section
+            class="vision-bearer"
+            id="vision-bearer"
+            aria-labelledby="visionTitle">
+
+            <div class="container vision-bearer-container">
+
+
+                <div class="vision-bearer-image">
+
+                    <img
+                        src="image/vision-bearer.jpeg"
+                        alt="KIMRI Vision Bearer and Chairman James Muhia Mwaura"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="vision-bearer-details">
+
+                    <span class="section-label">
+                        OUR LEADERSHIP
+                    </span>
+
+
+                    <h2 id="visionTitle">
+
+                        Meet Our Vision Bearer
+                        and Chairman
+
+                    </h2>
+
+
+                    <h3>
+                        James Muhia Mwaura
+                    </h3>
+
+
+                    <p>
+
+                        Providing leadership and supporting the
+                        Kigumo Makomboki Recovery Initiative in
+                        its mission to restore hope, support
+                        families, and promote recovery from drug
+                        and substance abuse.
+
+                    </p>
+
+
+                    <p class="vision-motto">
+
+                        <i class="fa-solid fa-handshake-angle"
+                           aria-hidden="true"></i>
+
+                        Together We Can — Tunaweza Pamoja
+
+                    </p>
+
+
+                    <a href="#about" class="vision-button">
+
+                        <i class="fa-solid fa-circle-info"
+                           aria-hidden="true"></i>
+
+                        Learn About KIMRI
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ABOUT SECTION
+        ====================================== -->
+
+        <section
+            class="about-section"
+            id="about"
+            aria-labelledby="aboutTitle">
+
+            <div class="container about">
+
+                <div class="about-heading">
+
+                    <span class="section-label">
+                        WHO WE ARE
+                    </span>
+
+                    <h2 id="aboutTitle">
+                        About KIMRI
+                    </h2>
+
+                    <p>
+
+                        Kigumo Makomboki Recovery Initiative
+                        (KIMRI) is a community-based organisation
+                        committed to restoring hope, supporting
+                        families, and helping individuals affected
+                        by drug and substance abuse rebuild
+                        their lives.
+
+                    </p>
+
+                    <p>
+
+                        Through community awareness, rehabilitation
+                        support, counselling, education, and family
+                        engagement, KIMRI aims to promote healthier
+                        communities and reduce the harm caused by
+                        drug and substance abuse.
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-details">
+
+
+                    <div class="about-detail-item">
+
+                        <div class="about-detail-icon">
+
+                            <i class="fa-solid fa-user-tie"
+                               aria-hidden="true"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Vision Bearer</strong>
+
+                            <p>
+                                James Muhia Mwaura
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="about-detail-item">
+
+                        <div class="about-detail-icon">
+
+                            <i class="fa-solid fa-eye"
+                               aria-hidden="true"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Our Vision</strong>
+
+                            <p>
+                                Tunaweza Pamoja
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="about-detail-item">
+
+                        <div class="about-detail-icon">
+
+                            <i class="fa-solid fa-location-dot"
+                               aria-hidden="true"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Venue</strong>
+
+                            <p>
+                                KAG Makomboki Church
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="about-detail-item">
+
+                        <div class="about-detail-icon">
+
+                            <i class="fa-solid fa-calendar-days"
+                               aria-hidden="true"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>Event Date</strong>
+
+                            <p>
+                                06 September 2026
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MISSION SECTION
+        ====================================== -->
+
+        <section
+            class="mission"
+            id="mission"
+            aria-labelledby="missionTitle">
+
+            <div class="container">
+
+
+                <div class="mission-intro">
+
+                    <span class="section-label">
+                        OUR PURPOSE
+                    </span>
+
+
+                    <h2 id="missionTitle">
+
+                        Building a Healthier Community
+
+                    </h2>
+
+
+                    <p>
+
+                        To empower the people of Kigumo through
+                        rehabilitation support, education,
+                        counselling, and community participation,
+                        helping individuals overcome the challenges
+                        of drug and substance abuse and supporting
+                        families as they work towards recovery.
+
+                    </p>
+
+
+                    <span class="mission-divider"></span>
+
+                </div>
+
+
+
+                <div class="mission-grid">
+
+
+                    <!-- Mission 1 -->
+
+                    <article class="mission-card">
+
+                        <div class="mission-icon">
+
+                            <i class="fa-solid fa-hands-holding-circle"
+                               aria-hidden="true"></i>
+
+                        </div>
+
+                        <span class="mission-number">
+                            01
+                        </span>
+
+
+                        <h3>
+                            Rehabilitation Support
+                        </h3>
+
+
+                        <p>
+
+                            Promote access to appropriate
+                            rehabilitation services and recovery
+                            support for individuals affected by
+                            drug and substance abuse.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Mission 2 -->
+
+                    <article class="mission-card">
+
+                        <div class="mission-icon">
+
+                            <i class="fa-solid fa-graduation-cap"
+                               aria-hidden="true"></i>
+
+                        </div>
+
+                        <span class="mission-number">
+                            02
+                        </span>
+
+
+                        <h3>
+                            Education and Awareness
+                        </h3>
+
+
+                        <p>
+
+                            Educate young people, families, and
+                            the wider community about the dangers
+                            of drug abuse, prevention, and the
+                            importance of seeking help.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Mission 3 -->
+
+                    <article class="mission-card">
+
+                        <div class="mission-icon">
+
+                            <i class="fa-solid fa-hand-holding-heart"
+                               aria-hidden="true"></i>
+
+                        </div>
+
+                        <span class="mission-number">
+                            03
+                        </span>
+
+
+                        <h3>
+                            Counselling and Support
+                        </h3>
+
+
+                        <p>
+
+                            Provide counselling services,
+                            support groups, and resources to
+                            help individuals and families cope
+                            with the challenges of drug and
+                            substance abuse.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Mission 4 -->
+
+                    <article class="mission-card">
+
+                        <div class="mission-icon">
+
+                            <i class="fa-solid fa-people-group"
+                               aria-hidden="true"></i>
+
+                        </div>
+
+                        <span class="mission-number">
+                            04
+                        </span>
+
+
+                        <h3>
+                            Community Reintegration
+                        </h3>
+
+
+                        <p>
+
+                            Encourage acceptance, dignity,
+                            and community involvement to help
+                            people in recovery rebuild
+                            relationships and participate
+                            positively in society.
+
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GALLERY SECTION
+        ====================================== -->
+
+        <section
+            class="gallery-section"
+            id="gallery"
+            aria-labelledby="galleryTitle">
+
+            <div class="container">
+
+
+                <div class="gallery-heading">
+
+                    <span class="section-label">
+                        OUR WORK IN THE COMMUNITY
+                    </span>
+
+
+                    <h2 id="galleryTitle">
+                        Our Gallery
+                    </h2>
+
+
+                    <p class="gallery-intro">
+
+                        Moments of leadership, counselling,
+                        community engagement and recovery support.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="gallery">
+
+
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        aria-label="View KIMRI board meeting photograph">
+
+                        <img
+                            src="image/Board meeting.jpeg"
+                            alt="KIMRI board meeting"
+                            loading="lazy">
+
+                        <span class="gallery-overlay">
+
+                            <span>Board Meeting</span>
+
+                            <i class="fa-solid fa-expand"
+                               aria-hidden="true"></i>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        aria-label="View KIMRI committee meeting photograph">
+
+                        <img
+                            src="image/committee meeting.jpeg"
+                            alt="KIMRI committee meeting"
+                            loading="lazy">
+
+                        <span class="gallery-overlay">
+
+                            <span>Committee Meeting</span>
+
+                            <i class="fa-solid fa-expand"
+                               aria-hidden="true"></i>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        aria-label="View KIMRI community group photograph">
+
+                        <img
+                            src="image/group photo.jpeg"
+                            alt="KIMRI community group photograph"
+                            loading="lazy">
+
+                        <span class="gallery-overlay">
+
+                            <span>Community Gathering</span>
+
+                            <i class="fa-solid fa-expand"
+                               aria-hidden="true"></i>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        aria-label="View KIMRI Vice Chairman photograph">
+
+                        <img
+                            src="image/vice chairman.jpeg"
+                            alt="KIMRI Vice Chairman"
+                            loading="lazy">
+
+                        <span class="gallery-overlay">
+
+                            <span>Our Leadership</span>
+
+                            <i class="fa-solid fa-expand"
+                               aria-hidden="true"></i>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        aria-label="View KIMRI community field visit photograph">
+
+                        <img
+                            src="image/field.jpeg"
+                            alt="KIMRI community field visit"
+                            loading="lazy">
+
+                        <span class="gallery-overlay">
+
+                            <span>Community Outreach</span>
+
+                            <i class="fa-solid fa-expand"
+                               aria-hidden="true"></i>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        aria-label="View recovery support group photograph">
+
+                        <img
+                            src="image/recovery.jpeg"
+                            alt="Recovery support group"
+                            loading="lazy">
+
+                        <span class="gallery-overlay">
+
+                            <span>Recovery Support</span>
+
+                            <i class="fa-solid fa-expand"
+                               aria-hidden="true"></i>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        aria-label="View KIMRI counselling activities photograph">
+
+                        <img
+                            src="image/counselling.jpeg"
+                            alt="KIMRI counselling activities"
+                            loading="lazy">
+
+                        <span class="gallery-overlay">
+
+                            <span>Counselling</span>
+
+                            <i class="fa-solid fa-expand"
+                               aria-hidden="true"></i>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="gallery-item"
+                        aria-label="View KIMRI leadership team photograph">
+
+                        <img
+                            src="image/leadership team.jpeg"
+                            alt="KIMRI leadership team"
+                            loading="lazy">
+
+                        <span class="gallery-overlay">
+
+                            <span>Leadership Team</span>
+
+                            <i class="fa-solid fa-expand"
+                               aria-hidden="true"></i>
+
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FEEDBACK SECTION
+        ====================================== -->
+
+        <section
+            class="feedback-section"
+            id="feedback"
+            aria-labelledby="feedbackTitle">
+
+            <div class="container feedback-container">
+
+
+                <div class="feedback-heading">
+
+                    <span class="section-label">
+                        YOUR VOICE MATTERS
+                    </span>
+
+
+                    <h2 id="feedbackTitle">
+                        Give Us Your Feedback
+                    </h2>
+
+
+                    <p>
+
+                        Your opinion matters to KIMRI.
+                        Share your experience, suggestions,
+                        and ideas to help us improve our
+                        services and support our community.
+
+                    </p>
+
+                </div>
+
+
+
+                <form
+                    class="feedback-form"
+                    id="feedbackForm"
+                    action="https://formspree.io/f/mnppdrpn"
+                    method="POST"
+                    accept-charset="UTF-8">
+
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New KIMRI Website Feedback">
+
+
+                    <!-- Honeypot spam protection -->
+
+                    <input
+                        type="text"
+                        name="_gotcha"
+                        tabindex="-1"
+                        autocomplete="off"
+                        aria-hidden="true"
+                        class="form-honeypot">
+
+
+
+                    <div class="form-group">
+
+                        <label for="feedbackName">
+                            Full Name <span class="optional-label">(optional)</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="feedbackName"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            maxlength="100">
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="feedbackEmail">
+                            Email Address <span class="optional-label">(optional)</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="feedbackEmail"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            maxlength="150">
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="feedbackType">
+                            Feedback Category
+                        </label>
+
+                        <select
+                            id="feedbackType"
+                            name="category"
+                            required>
+
+                            <option value="">
+                                Choose a category
+                            </option>
+
+                            <option value="Suggestion">
+                                Suggestion
+                            </option>
+
+                            <option value="Compliment">
+                                Compliment
+                            </option>
+
+                            <option value="Complaint">
+                                Complaint
+                            </option>
+
+                            <option value="Community Support">
+                                Community Support
+                            </option>
+
+                            <option value="Rehabilitation Services">
+                                Rehabilitation Services
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <fieldset class="rating-fieldset">
+
+                        <legend>
+                            Your Rating
+                        </legend>
+
+                        <div class="star-rating" role="radiogroup" aria-label="Your rating">
+                            <input type="radio" id="feedbackRating1" name="rating" value="1" required>
+                            <label for="feedbackRating1" data-rating="1">
+                                <span aria-hidden="true">★</span>
+                                <span class="visually-hidden">1 star</span>
+                            </label>
+                            <input type="radio" id="feedbackRating2" name="rating" value="2">
+                            <label for="feedbackRating2" data-rating="2">
+                                <span aria-hidden="true">★</span>
+                                <span class="visually-hidden">2 stars</span>
+                            </label>
+                            <input type="radio" id="feedbackRating3" name="rating" value="3">
+                            <label for="feedbackRating3" data-rating="3">
+                                <span aria-hidden="true">★</span>
+                                <span class="visually-hidden">3 stars</span>
+                            </label>
+                            <input type="radio" id="feedbackRating4" name="rating" value="4">
+                            <label for="feedbackRating4" data-rating="4">
+                                <span aria-hidden="true">★</span>
+                                <span class="visually-hidden">4 stars</span>
+                            </label>
+                            <input type="radio" id="feedbackRating5" name="rating" value="5">
+                            <label for="feedbackRating5" data-rating="5">
+                                <span aria-hidden="true">★</span>
+                                <span class="visually-hidden">5 stars</span>
+                            </label>
+                        </div>
+
+                        <p class="rating-hint" id="feedbackRatingText" aria-live="polite">
+                            Select a star rating
+                        </p>
+
+                        </fieldset>
+
+                    </div>
+
+
+
+                    <div class="form-group form-message-group">
+
+                        <label for="feedbackMessage">
+                            Your Message
+                        </label>
+
+                        <textarea
+                            id="feedbackMessage"
+                            name="message"
+                            rows="6"
+                            minlength="10"
+                            maxlength="3000"
+                            placeholder="Write your feedback here..."
+                            required></textarea>
+
+                    </div>
+
+                    <p class="feedback-privacy-note">
+                        Feedback is sent through Formspree. Your name and email
+                        are optional; do not include private medical or other
+                        sensitive information.
+                    </p>
+
+
+
+                    <button
+                        type="submit"
+                        class="feedback-submit"
+                        id="feedbackSubmit">
+
+                        <i class="fa-solid fa-paper-plane"
+                           aria-hidden="true"></i>
+
+                        Submit Feedback
+
+                    </button>
+
+
+
+                    <p
+                        id="feedbackStatus"
+                        class="feedback-status"
+                        role="status"
+                        aria-live="polite">
+
+                    </p>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GALLERY LIGHTBOX
+        ====================================== -->
+
+        <div
+            id="lightbox"
+            class="lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Gallery image viewer"
+            aria-hidden="true"
+            hidden>
+
+
+            <button
+                type="button"
+                class="close"
+                aria-label="Close image viewer">
+
+                &times;
+
+            </button>
+
+
+
+            <button
+                type="button"
+                class="prev"
+                aria-label="Previous image">
+
+                &#10094;
+
+            </button>
+
+
+
+            <div class="lightbox-content">
+
+                <img
+                    id="lightboxImg"
+                    src=""
+                    alt="Enlarged KIMRI gallery image">
+
+
+                <div
+                    class="caption"
+                    aria-live="polite">
+
+                </div>
+
+            </div>
+
+
+
+            <button
+                type="button"
+                class="next"
+                aria-label="Next image">
+
+                &#10095;
+
+            </button>
+
+
+        </div>
+
+        <div
+            id="donation-dialog"
+            class="donation-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="donation-dialog-title"
+            aria-describedby="donation-dialog-description"
+            aria-hidden="true"
+            hidden>
+
+            <div class="donation-dialog-content">
+
+                <button
+                    type="button"
+                    class="donation-dialog-close"
+                    aria-label="Close donation information">
+                    &times;
+                </button>
+
+                <span class="donation-dialog-icon" aria-hidden="true">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </span>
+
+                <h2 id="donation-dialog-title">Support KIMRI</h2>
+
+                <p id="donation-dialog-description">
+                    Use the payment details below to support KIMRI. Before
+                    completing a payment, confirm the recipient name matches
+                    KIMRI.
+                </p>
+
+                <section
+                    class="donation-payment-details"
+                    aria-labelledby="donation-payment-title">
+                    <h3 id="donation-payment-title">Amica Bank Paybill</h3>
+                    <dl>
+                        <div>
+                            <dt>Paybill number</dt>
+                            <dd>4298298</dd>
+                        </div>
+                        <div>
+                            <dt>Account number</dt>
+                            <dd>015110000000096</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <div class="donation-dialog-contact">
+                    <a href="tel:0748250970">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>
+                            <small>Call KIMRI</small>
+                            0748250970
+                        </span>
+                    </a>
+                    <a href="tel:0727744985">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>
+                            <small>Call KIMRI</small>
+                            0727744985
+                        </span>
+                    </a>
+                    <a href="tel:0725909816">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>
+                            <small>Call KIMRI</small>
+                            0725909816
+                        </span>
+                    </a>
+                    <a
+                        href="https://wa.me/254748250970?text=Hello%20KIMRI%2C%20please%20share%20your%20official%20donation%20information."
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        <span>
+                            <small>Ask on WhatsApp</small>
+                            Message KIMRI
+                        </span>
+                    </a>
+                    <a href="mailto:info@kimri.or.ke">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span>
+                            <small>Email KIMRI</small>
+                            info@kimri.or.ke
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer id="contact">
+
+        <div class="container">
+
+
+            <div class="footer-content">
+
+
+                <!-- Footer brand -->
+
+                <div class="footer-brand">
+
+                    <img
+                        src="image/kimri-mark.jpeg"
+                        alt="KIMRI logo"
+                        loading="lazy">
+
+                    <h2>KIMRI</h2>
+
+                    <p>
+                        Restoring Hope, Healing Families.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Contact information -->
+
+                <div class="footer-contact">
+
+                    <h3>Contact Us</h3>
+
+
+                    <p>
+
+                        <i class="fa-solid fa-phone"
+                           aria-hidden="true"></i>
+
+                        <a href="tel:0748250970">
+                            0748250970
+                        </a>
+
+                        <span class="contact-separator">|</span>
+
+                        <a href="tel:0727744985">
+                            0727744985
+                        </a>
+
+                        <span class="contact-separator">|</span>
+
+                        <a href="tel:0725909816">
+                            0725909816
+                        </a>
+
+                    </p>
+
+
+
+                    <p>
+
+                        <i class="fa-solid fa-location-dot"
+                           aria-hidden="true"></i>
+
+                        Makomboki, Kigumo,
+                        Murang'a County, Kenya
+
+                    </p>
+
+
+
+                    <p>
+
+                        <i class="fa-solid fa-envelope"
+                           aria-hidden="true"></i>
+
+                        <a href="mailto:info@kimri.or.ke">
+                            info@kimri.or.ke
+                        </a>
+
+                    </p>
+
+                    <p class="footer-donation-note">
+
+                        Ask KIMRI for verified donation options before sending
+                        any money.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <section
+                class="footer-location"
+                aria-labelledby="locationTitle">
+
+                <div class="location-heading">
+                    <div>
+                        <h3 id="locationTitle">Find KIMRI</h3>
+                        <p>
+                            KAG Makomboki Church, Makomboki,
+                            Kigumo, Murang'a County, Kenya
+                        </p>
+                        <p class="location-note">
+                            Your location is requested only when you click the
+                            button and allow access. This page does not store it.
+                        </p>
+                        <p class="location-note">
+                            The map pin is a regional Kigumo reference, not a
+                            verified pin for the church. Directions use the
+                            venue name and address in Google Maps.
+                        </p>
+                    </div>
+
+                    <div class="location-actions">
+                        <button
+                            type="button"
+                            class="map-location-button"
+                            id="useMyLocation">
+                            <i class="fa-solid fa-location-crosshairs"
+                               aria-hidden="true"></i>
+                            Use my location
+                        </button>
+
+                        <a
+                            class="map-directions"
+                            id="mapDirections"
+                            href="https://www.google.com/maps/dir/?api=1&amp;destination=KAG%20Makomboki%20Church%2C%20Makomboki%2C%20Kigumo%2C%20Murang%27a%20County%2C%20Kenya"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fa-solid fa-diamond-turn-right"
+                               aria-hidden="true"></i>
+                            Get directions
+                        </a>
+                    </div>
+                </div>
+
+                <p
+                    class="location-status"
+                    id="locationStatus"
+                    role="status"
+                    aria-live="polite"></p>
+
+                <div class="map-toolbar" role="group" aria-label="Map style">
+                    <span>Map view</span>
+                    <button
+                        type="button"
+                        class="map-layer-toggle active"
+                        data-map-layer="streets"
+                        aria-pressed="true">
+                        <i class="fa-solid fa-map" aria-hidden="true"></i>
+                        Street
+                    </button>
+                    <button
+                        type="button"
+                        class="map-layer-toggle"
+                        data-map-layer="satellite"
+                        aria-pressed="false">
+                        <i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+                        Satellite
+                    </button>
+                </div>
+
+                <div
+                    id="locationMap"
+                    class="location-map"
+                    role="region"
+                    aria-label="Interactive map of Kigumo, Murang'a County">
+                    <p class="map-fallback" role="status">
+                        The interactive map could not be loaded.
+                        Use the directions link above to navigate.
+                    </p>
+                </div>
+
+            </section>
+
+
+
+            <!-- Footer bottom -->
+
+            <div class="footer-bottom">
+
+
+                <p class="copy">
+
+                    &copy;
+
+                    <span id="currentYear">
+                        2026
+                    </span>
+
+                    KIMRI. All Rights Reserved.
+
+                </p>
+
+
+
+                <a href="#home" class="back-to-top">
+
+                    Back to Top
+
+                    <i class="fa-solid fa-arrow-up"
+                       aria-hidden="true"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
     </footer>
-    <script src="script.js" defer></script>
+
+    <a
+        class="whatsapp-chat"
+        href="https://wa.me/254748250970?text=Hello%20KIMRI%2C%20I%27d%20like%20to%20chat."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with KIMRI on WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span>Chat with us</span>
+    </a>
+
+
 </body>
 </html>
