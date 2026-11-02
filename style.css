@@ -641,7 +641,7 @@ section {
 .about {
     display: grid;
     grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
-    align-items: center;
+    align-items: start;
     gap: clamp(32px, 5vw, 64px);
 }
 
@@ -690,7 +690,7 @@ section {
 
 .about-details {
     display: grid;
-    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-template-columns: 1fr;
     gap: 16px;
 }
 
@@ -892,6 +892,47 @@ section {
     color: var(--muted);
     font-size: 14px;
     line-height: 1.75;
+}
+
+.activities-section {
+    margin-top: 56px;
+}
+
+.activities-heading {
+    margin-bottom: 22px;
+    color: var(--green-dark);
+    font-size: clamp(24px,3vw,32px);
+    font-weight: 900;
+    text-align: center;
+}
+
+.activities-list {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.activities-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 19px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.activities-list li i {
+    flex: 0 0 20px;
+    margin-top: 3px;
+    color: var(--green);
+    text-align: center;
 }
 
 /* =========================================================
@@ -2071,7 +2112,7 @@ footer {
     }
 
     .about-details {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+        grid-template-columns: 1fr;
     }
 
     .feedback-form {
@@ -2430,6 +2471,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .activities-list {
+        grid-template-columns: 1fr;
+    }
+
     .mission-card {
         min-height: 0;
         padding: 23px 20px;
@@ -2691,6 +2736,7 @@ html[data-theme="dark"] .about-heading p,
 html[data-theme="dark"] .about-detail-item strong,
 html[data-theme="dark"] .vision-bearer-details .vision-motto,
 html[data-theme="dark"] .mission-card h3,
+html[data-theme="dark"] .activities-heading,
 html[data-theme="dark"] .donation-dialog-content h2,
 html[data-theme="dark"] .donation-payment-details h3,
 html[data-theme="dark"] .donation-payment-details dd,
@@ -2705,7 +2751,8 @@ html[data-theme="dark"] .feedback-submit {
 }
 
 html[data-theme="dark"] .about-detail-item,
-html[data-theme="dark"] .mission-card {
+html[data-theme="dark"] .mission-card,
+html[data-theme="dark"] .activities-list li {
     border-color: var(--border);
 }
 
