@@ -1274,6 +1274,22 @@ section {
     color: #b42318;
 }
 
+.feedback-fallback {
+    grid-column: 1/-1;
+    margin-top: -12px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.feedback-fallback a {
+    color: var(--green-dark);
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 /* =========================================================
    11. GALLERY LIGHTBOX
 ========================================================= */

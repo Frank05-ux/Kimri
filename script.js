@@ -1349,6 +1349,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const feedbackForm = $("#feedbackForm");
 
     const feedbackStatus = $("#feedbackStatus");
+    const feedbackFallback = $("#feedbackFallback");
+    const feedbackEmailLink = $("#feedbackEmailLink");
 
     const feedbackSubmitBtn = feedbackForm
         ? $('[type="submit"]', feedbackForm)
@@ -1416,6 +1418,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function clearFeedbackStatus() {
+
+        if (feedbackFallback) {
+            feedbackFallback.hidden = true;
+        }
 
         if (!feedbackStatus) {
             return;
@@ -1632,8 +1638,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     if (!response.ok) {
 
-                        let errorMessage =
-                            "We could not submit your feedback. Please try again.";
+                        let errorMessage;
 
                         if (
                             Array.isArray(responseData.errors) &&
@@ -1643,21 +1648,53 @@ document.addEventListener("DOMContentLoaded", () => {
                             const details = responseData.errors
                                 .map((item) => {
 
-                                    return typeof item === "string"
-                                        ? item
-                                        : item.message || "";
+                                    if (typeof item === "string") {
+                                        return item;
+                                    }
+
+                                    return item &&
+                                        typeof item === "object" &&
+                                        typeof item.message === "string"
+                                        ? item.message
+                                        : "";
 
                                 })
                                 .filter(Boolean)
                                 .join(" ");
 
                             if (details) {
-                                errorMessage = details;
+                                errorMessage =
+                                    `${details} (HTTP ${response.status}).`;
                             }
 
-                        } else if (responseData.message) {
+                        }
 
-                            errorMessage = responseData.message;
+                        if (!errorMessage && responseData.message) {
+                            errorMessage =
+                                `${responseData.message} (HTTP ${response.status}).`;
+                        }
+
+                        if (!errorMessage) {
+
+                            if (response.status === 404) {
+                                errorMessage =
+                                    "The feedback form link was not found (HTTP 404). Please contact KIMRI.";
+                            } else if (response.status === 403) {
+                                errorMessage =
+                                    "The feedback service is not accepting submissions (HTTP 403). Please contact KIMRI.";
+                            } else if (response.status === 422) {
+                                errorMessage =
+                                    "The feedback service rejected the form data (HTTP 422). Check the required fields and try again.";
+                            } else if (response.status === 429) {
+                                errorMessage =
+                                    "Too many submissions were received (HTTP 429). Please wait and try again.";
+                            } else if (response.status >= 500) {
+                                errorMessage =
+                                    `The feedback service is temporarily unavailable (HTTP ${response.status}). Please try again later.`;
+                            } else {
+                                errorMessage =
+                                    `The feedback service rejected the submission (HTTP ${response.status}). Please try again or email KIMRI.`;
+                            }
 
                         }
 
@@ -1715,6 +1752,31 @@ document.addEventListener("DOMContentLoaded", () => {
                         "error",
                         message
                     );
+
+                    if (feedbackFallback && feedbackEmailLink) {
+                        const formData = new FormData(feedbackForm);
+                        const fields = [
+                            ["Category", formData.get("category")],
+                            ["Rating", formData.get("rating")],
+                            ["Name", formData.get("name")],
+                            ["Email", formData.get("email")],
+                            ["Message", formData.get("message")]
+                        ];
+                        const emailBody = fields
+                            .filter(([, value]) =>
+                                typeof value === "string" && value.trim()
+                            )
+                            .map(([label, value]) => `${label}: ${value}`)
+                            .join("\n\n");
+
+                        feedbackEmailLink.href =
+                            "mailto:info@kimri.or.ke" +
+                            "?subject=" +
+                            encodeURIComponent("KIMRI Website Feedback") +
+                            "&body=" +
+                            encodeURIComponent(emailBody);
+                        feedbackFallback.hidden = false;
+                    }
 
                 } finally {
 

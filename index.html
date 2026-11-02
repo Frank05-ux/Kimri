@@ -1186,7 +1186,8 @@
                     <p class="feedback-privacy-note">
                         Feedback is sent through Formspree. Your name and email
                         are optional; do not include private medical or other
-                        sensitive information.
+                        sensitive information. If online submission fails, you
+                        can email KIMRI instead.
                     </p>
 
 
@@ -1211,6 +1212,17 @@
                         role="status"
                         aria-live="polite">
 
+                    </p>
+
+                    <p
+                        id="feedbackFallback"
+                        class="feedback-fallback"
+                        hidden>
+                        Your feedback is still in this form. You can send it by
+                        email instead:
+                        <a id="feedbackEmailLink" href="mailto:info@kimri.or.ke">
+                            Email KIMRI
+                        </a>
                     </p>
 
 
