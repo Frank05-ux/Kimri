@@ -503,26 +503,51 @@ section {
 ========================================================= */
 
 .vision-bearer {
-    padding: 95px 0;
+    position: relative;
+    overflow: hidden;
+    padding: 110px 0;
     background: var(--off-white);
 }
 
-.vision-bearer-container {
-    display: grid;
-    grid-template-columns: repeat(2,minmax(0,1fr));
-    align-items: start;
-    gap: 44px clamp(32px,5vw,60px);
-    padding: 38px;
-    background: var(--surface);
+.vision-bearer::before,
+.vision-bearer::after {
+    position: absolute;
+    z-index: 0;
+    width: 340px;
+    height: 340px;
     border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.vision-bearer::before {
+    top: -190px;
+    right: -120px;
+}
+
+.vision-bearer::after {
+    bottom: -240px;
+    left: -160px;
+}
+
+.vision-bearer-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
 }
 
 .leadership-heading {
     grid-column: 1 / -1;
-    margin-bottom: -12px;
+    max-width: 720px;
+    margin: 0 auto 12px;
     text-align: center;
+}
+
+.leadership-heading .section-label {
+    margin-bottom: 0;
 }
 
 .leadership-heading h2 {
@@ -530,86 +555,132 @@ section {
     color: var(--heading);
     font-size: clamp(32px,4vw,43px);
     font-weight: 900;
+    letter-spacing: -1.2px;
+}
+
+.leadership-heading p {
+    max-width: 560px;
+    margin: 14px auto 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.leadership-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 16px 45px rgba(9, 47, 27, .08);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.leadership-card:hover {
+    border-color: rgba(214, 166, 46, .55);
+    box-shadow: 0 24px 55px rgba(9, 47, 27, .14);
+    transform: translateY(-7px);
 }
 
 .vision-bearer-image {
     position: relative;
     min-width: 0;
-}
-
-.vision-bearer-image::before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    top: -13px;
-    left: -13px;
-    width: 45%;
-    height: 45%;
-    border-top: 5px solid var(--gold);
-    border-left: 5px solid var(--gold);
-    border-radius: 12px 0 0;
+    overflow: hidden;
+    background: var(--green-soft);
 }
 
 .vision-bearer-image::after {
-    content: "";
     position: absolute;
-    z-index: 0;
-    right: -13px;
-    bottom: -13px;
-    width: 45%;
-    height: 45%;
-    border-right: 5px solid var(--green);
-    border-bottom: 5px solid var(--green);
-    border-radius: 0 0 12px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 38%;
+    background: linear-gradient(transparent, rgba(9, 35, 20, .28));
+    content: "";
+    pointer-events: none;
 }
 
 .vision-bearer-image img {
     position: relative;
     z-index: 1;
     width: 100%;
-    height: 420px;
+    height: 300px;
     object-fit: cover;
     object-position: center 25%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    transition: transform .6s ease;
 }
 
-.vision-bearer-details {
-    padding: 12px 5px;
+.leadership-card:hover .vision-bearer-image img {
+    transform: scale(1.035);
 }
 
-.leadership-chairman-details {
-    padding-top: 30px;
-    border-top: 1px solid var(--border);
+.vision-bearer-details.leadership-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 32px;
 }
 
-.vision-bearer-details h2 {
-    margin-bottom: 20px;
-    font-size: clamp(30px,4vw,43px);
-    font-weight: 900;
-    letter-spacing: -1px;
+.leadership-role {
+    align-self: flex-start;
+    margin-bottom: 15px;
+    padding: 8px 13px;
+    color: var(--green-dark);
+    background: var(--green-soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
 }
 
 .vision-bearer-details h3 {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: var(--green);
-    font-size: 22px;
+    font-size: clamp(22px, 2.4vw, 27px);
     font-weight: 800;
+    letter-spacing: -.5px;
 }
 
-.vision-bearer-details > p {
-    margin-bottom: 17px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.9;
+.leadership-focus {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 16px;
+    padding: 20px 18px;
+    background: linear-gradient(135deg, var(--green-pale), var(--surface));
+    border: 0;
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-md);
+}
+
+.leadership-focus-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    place-items: center;
+    color: var(--green);
+    background: var(--green-soft);
+    border-radius: 12px;
+}
+
+.leadership-focus p {
+    margin: 0;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.75;
 }
 
 .vision-bearer-details .vision-motto {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 25px 0;
-    padding: 16px 19px;
+    margin: 20px 0 0;
+    padding: 14px 16px;
     color: var(--green-dark);
     background: var(--gold-pale);
     border-left: 4px solid var(--gold);
@@ -2111,13 +2182,16 @@ footer {
     }
 
     .vision-bearer-container {
-        grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
-        gap: 30px;
-        padding: 25px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .vision-bearer-details.leadership-card-content {
+        padding: 24px;
     }
 
     .vision-bearer-image img {
-        height: 360px;
+        height: 250px;
     }
 
     .about {
@@ -2229,26 +2303,29 @@ footer {
 
     .vision-bearer-container {
         grid-template-columns: 1fr;
-        gap: 35px;
-        padding: 22px;
-        border-radius: var(--radius-lg);
+        gap: 24px;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
     }
 
-    .vision-bearer-image {
-        width: min(100%,420px);
-        margin-inline: auto;
+    .leadership-heading {
+        margin-bottom: 4px;
     }
 
     .vision-bearer-image img {
-        height: 380px;
+        height: 300px;
     }
 
-    .vision-bearer-details {
-        padding: 0;
+    .vision-bearer-details.leadership-card-content {
+        padding: 25px;
     }
 
-    .vision-bearer-details h2 {
-        font-size: 32px;
+    .leadership-card {
+        width: min(100%, 560px);
+        margin-inline: auto;
     }
 
     .about-section,
@@ -2451,20 +2528,21 @@ footer {
         padding: 8px 11px;
     }
 
-    .vision-bearer-container {
-        padding: 17px;
-    }
-
     .vision-bearer-image img {
         height: 310px;
     }
 
-    .vision-bearer-details h2 {
-        font-size: 28px;
-    }
-
     .vision-bearer-details h3 {
         font-size: 19px;
+    }
+
+    .vision-bearer-details.leadership-card-content {
+        padding: 20px;
+    }
+
+    .leadership-focus {
+        gap: 12px;
+        padding: 16px;
     }
 
     .about-heading h2,
@@ -2753,6 +2831,7 @@ html[data-theme="dark"] .about-heading h2,
 html[data-theme="dark"] .about-heading p,
 html[data-theme="dark"] .about-detail-item strong,
 html[data-theme="dark"] .vision-bearer-details .vision-motto,
+html[data-theme="dark"] .leadership-role,
 html[data-theme="dark"] .mission-card h3,
 html[data-theme="dark"] .activities-heading,
 html[data-theme="dark"] .donation-dialog-content h2,
@@ -2760,6 +2839,11 @@ html[data-theme="dark"] .donation-payment-details h3,
 html[data-theme="dark"] .donation-payment-details dd,
 html[data-theme="dark"] .donation-dialog-contact a {
     color: #d6ead9;
+}
+
+html[data-theme="dark"] .leadership-focus-icon {
+    color: var(--gold-light);
+    background: var(--green-soft);
 }
 
 html[data-theme="dark"] .nav-logo,
