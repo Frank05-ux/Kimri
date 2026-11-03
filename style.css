@@ -625,6 +625,118 @@ section {
     transform: translateY(-2px);
 }
 
+.vision-bearer-container {
+    display: block;
+}
+
+.leadership-heading {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.leadership-heading h2 {
+    margin-top: 12px;
+    color: var(--heading);
+    font-size: clamp(32px,4vw,43px);
+    font-weight: 900;
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 24px;
+}
+
+.leadership-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.leadership-card-image,
+.leadership-card .vision-bearer-image {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.leadership-card-image img,
+.leadership-card .vision-bearer-image img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.leadership-card .vision-bearer-image {
+    margin: 0;
+}
+
+.leadership-card .vision-bearer-image::before,
+.leadership-card .vision-bearer-image::after {
+    display: none;
+}
+
+.leadership-card-content {
+    padding: 24px;
+}
+
+.leadership-role {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.leadership-card-content h3 {
+    margin-bottom: 12px;
+    color: var(--green-dark);
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.leadership-card-content > p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.leadership-card .vision-motto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 15px 17px;
+    color: var(--green-dark);
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    font-weight: 800;
+}
+
+.leadership-card .vision-motto i {
+    flex: 0 0 auto;
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.leadership-action {
+    margin-top: 28px;
+    text-align: center;
+}
+
 /* =========================================================
    07. ABOUT KIMRI — REDESIGNED
 ========================================================= */
@@ -2125,6 +2237,15 @@ footer {
 ========================================================= */
 
 @media (max-width: 650px) {
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leadership-card-image,
+    .leadership-card .vision-bearer-image {
+        height: 300px;
+    }
+
     .container {
         width: min(100% - 30px,var(--container));
     }
@@ -2735,6 +2856,9 @@ html[data-theme="dark"] .about-heading h2,
 html[data-theme="dark"] .about-heading p,
 html[data-theme="dark"] .about-detail-item strong,
 html[data-theme="dark"] .vision-bearer-details .vision-motto,
+html[data-theme="dark"] .leadership-card-content h3,
+html[data-theme="dark"] .leadership-card .vision-motto,
+html[data-theme="dark"] .leadership-heading h2,
 html[data-theme="dark"] .mission-card h3,
 html[data-theme="dark"] .activities-heading,
 html[data-theme="dark"] .donation-dialog-content h2,
@@ -2751,6 +2875,7 @@ html[data-theme="dark"] .feedback-submit {
 }
 
 html[data-theme="dark"] .about-detail-item,
+html[data-theme="dark"] .leadership-card,
 html[data-theme="dark"] .mission-card,
 html[data-theme="dark"] .activities-list li {
     border-color: var(--border);
